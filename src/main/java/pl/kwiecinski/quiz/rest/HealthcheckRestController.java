@@ -1,0 +1,16 @@
+package pl.kwiecinski.quiz.rest;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import pl.kwiecinski.quiz.model.dto.HealthcheckDto;
+
+@RequestMapping("/api/health")
+@RestController
+public class HealthcheckRestController {
+    @GetMapping
+    public HealthcheckDto healthcheck(){
+        HealthcheckDto dto = new HealthcheckDto(true, "It's working!");
+        return dto;
+    }
+}
